@@ -2,7 +2,7 @@
 
 microcom - A minimalistic terminal program
 
-This version change the menu key from ctrl-\ to ctrl-m (^M).
+This version change the menu key from ctrl-\ to ctrl-l (^L).
 ctrl-\  it's captured by the window manager and it's not posible to open menu at gnome or mate window managers.
 
 ```
@@ -17,7 +17,7 @@ DESCRIPTION
        microcom  is  a is a minimalistic terminal program for accessing devices (e.g. switches) via a serial connection.  It features connection via RS232 serial interfaces
        (including setting of transferrates) as well as in `telnetmode' as specified in rfc2217 and a (Linux specific) can mode.
 
-       The escape character to enter the program menu is crtl-M (^M). There are several commands available, among them quit (to exit microcom), exit (to return to  normal  mode)
+       The escape character to enter the program menu is crtl-L (^L). There are several commands available, among them quit (to exit microcom), exit (to return to  normal  mode)
        and speed (to set terminal speed)
 
 OPTIONS
