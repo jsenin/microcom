@@ -235,8 +235,8 @@ static void cook_buf(struct ios_ops *ios, unsigned char *buf, int num)
 
 	while (current < num) {	/* big while loop, to process all the charactes in buffer */
 
-		/* look for the next escape character (Ctrl-\) */
-		while ((current < num) && (buf[current] != 28))
+		/* look for the next escape character (Ctrl-M) */
+		while ((current < num) && (buf[current] != 13))
 			current++;
 		/* and write the sequence before esc char to the comm port */
 		if (current)
