@@ -2,7 +2,7 @@
 
 microcom - A minimalistic terminal program
 
-This version change the menu key from ctrl-\ to ctrl-l (^L).
+This version change the menu key from ctrl-\ to ctrl-q (^Q).
 ctrl-\  it's captured by the window manager and it's not posible to open menu at gnome or mate window managers.
 
 ```
