@@ -37,6 +37,32 @@ static struct termios sots;	/* old stdout/in termios settings to restore */
 struct ios_ops *ios;
 int debug;
 
+
+int char_to_menu_key(char a_char)
+{
+  char first_allowed_char = '@';
+  return (int)a_char - (int)first_allowed_char;
+}
+
+char open_menu_key(void)
+{
+  char *key; 
+
+  key = getenv("MICROCOM_MENU_KEY") ;
+  if (key == NULL) {
+    key = DEFAULT_OPEN_MENU_KEY;
+  } 
+  return key[0];
+}
+
+int open_menu_key_id(void)
+{
+
+  char menu_key;
+  menu_key = open_menu_key();
+  return char_to_menu_key(menu_key);
+}
+
 void init_terminal(void)
 {
 	struct termios sts;
@@ -309,7 +335,7 @@ int main(int argc, char *argv[])
 	ios->set_flow(ios, current_flow);
 
 	if (!listenonly) {
-		printf("Escape character: Ctrl-\\\n");
+		printf("Escape character: Ctrl-%c \n", open_menu_key());
 		printf("Type the escape character followed by c to get to the menu or q to quit\n");
 
 		/* Now deal with the local terminal side */

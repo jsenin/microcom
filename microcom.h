@@ -48,6 +48,10 @@ struct ios_ops {
 	int fd;
 };
 
+#define DEFAULT_OPEN_MENU_KEY "T"
+char open_menu_key(void);
+int open_menu_key_id(void);
+
 int mux_loop(struct ios_ops *); /* mux.c */
 void init_terminal(void);
 void restore_terminal(void);

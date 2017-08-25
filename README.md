@@ -2,8 +2,13 @@
 
 microcom - A minimalistic terminal program
 
-This version change the menu key from ctrl-\ to ctrl-q (^Q).
-ctrl-\  it's captured by the window manager and it's not posible to open menu at gnome or mate window managers.
+ctrl-T  it's captured by the window manager and it's not posible to open menu at gnome or mate window managers.
+ctrl-\ has been repaced with ctrl-T because using microcom under gtk terminal it's drop the combination key ctrl+\ and others, so menu was never opened.
+I also provided a MICROCOM_MENU_KEY envinroment value in order to set your favorite key to open the menu, so you can run as it :
+
+``` 
+MICROCOM_MENU_KEY='L' microcom -p /dev/<device_name>
+```
 
 ```
 SYNOPSIS
@@ -46,3 +51,19 @@ AUTHOR
        This manual page was written by Uwe Kleine-König based on work initially done by Alexander Reichle-Schmehl.
 
 ```
+
+INSTALLING 
+
+Microcom uses autoconf and libreadline-dev so you must to install it, run autoconf, ./configure and make 
+
+```
+apt-get install autoconf libreadline-dev
+
+autoconf
+./configure
+make
+
+```
+TROUBLESHOOTING
+
+autoconf could fail, run `autoreconf -i` to build the configure file  
