@@ -67,3 +67,5 @@ make
 TROUBLESHOOTING
 
 autoconf could fail, run `autoreconf -i` to build the configure file  
+
+- user must belong to 'dialout' group 
